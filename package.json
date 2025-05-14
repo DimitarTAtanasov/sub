@@ -1,0 +1,37 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "mustache config/testnet.json deploycontract/subgraph.yaml > subgraph.yaml && graph codegen && graph build",
+    "build": "tsc && node",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ greeter",
+    "create-local": "graph create --node http://localhost:8020/ Greeter",
+    "remove-local": "graph remove --node http://localhost:8020/ Greeter",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 Greeter",
+    "test": "graph test",
+    "graph-node": "docker compose --file ./deploycontract/docker-compose.yaml up -d",
+    "graph-local-clean": "docker compose down -v && docker-compose rm -v && rm -rf data/ipfs data/postgres",
+    "initDeployContract": "graph init deployContract --ipfs=http://localhost:5001/ipfs --abi=./abi.json --from-contract=0xC2513B70C4EC039bc723d57759cc12A8FC172089 --network=testnet --skip-git --contract-name=Greeter  --start-block=19587405"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-K-Ivanov/hedera-subgraph-repo-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel-K-Ivanov/hedera-subgraph-repo-example/issues"
+  },
+  "homepage": "https://github.com/Daniel-K-Ivanov/hedera-subgraph-repo-example#readme",
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.97.0",
+    "@graphprotocol/graph-ts": "0.37.0"
+  },
+  "devDependencies": {
+    "matchstick-as": "0.6.0",
+    "mustache": "^4.2.0",
+    "ts-node": "^10.9.2"
+  }
+}
