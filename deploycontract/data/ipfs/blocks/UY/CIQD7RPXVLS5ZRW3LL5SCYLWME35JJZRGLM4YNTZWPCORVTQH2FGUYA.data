@@ -1,0 +1,31 @@
+
+÷ïdataSources:
+  - kind: ethereum/contract
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmZQbrdhaR2p2EZR6raiLbpgX5hjKW4S5cDgy1VvHKmjtH
+          name: Greeter
+      apiVersion: 0.0.9
+      entities:
+        - GreetingSet
+      eventHandlers:
+        - event: GreetingSet(string)
+          handler: handleGreetingSet
+      file:
+        /: /ipfs/QmRfkkwHVkQBF8cKz6oy42E1XFMB3Wtaej16VzEuB3HehG
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: Greeter
+    network: testnet
+    source:
+      abi: Greeter
+      address: '0xC2513B70C4EC039bc723d57759cc12A8FC172089'
+      startBlock: 19587405
+indexerHints:
+  prune: auto
+schema:
+  file:
+    /: /ipfs/QmRirdiH8wwDdn83zL6zysyWYfaZAMrmmXYcbnBenhAVpZ
+specVersion: 1.3.0
+ï

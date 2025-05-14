@@ -1,0 +1,9 @@
+
+¬¤type GreetingSet @entity(immutable: true) {
+  id: Bytes!
+  _greeting: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+¤

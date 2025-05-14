@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "Greeter": {
+      "address": "0xC2513B70C4EC039bc723d57759cc12A8FC172089",
+      "startBlock": 19587405
+    }
+  }
+}
