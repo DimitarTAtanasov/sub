@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "NivikaMarketplace": {
+      "address": "0xc907642b36a20b05eed5c95fdc7fab059ad1fab2",
+      "startBlock": 19855301
+    }
+  }
+}

@@ -1,0 +1,35 @@
+specVersion: 1.3.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: NivikaMarketplace
+    network: testnet
+    source:
+      address: "0xc907642b36a20b05eed5c95fdc7fab059ad1fab2"
+      abi: NivikaMarketplace
+      startBlock: 19855301
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - ListingCreated
+        - ListingDeleted
+        - ListingUpdated
+        - Purchased
+      abis:
+        - name: NivikaMarketplace
+          file: ./abis/NivikaMarketplace.json
+      eventHandlers:
+        - event: ListingCreated(indexed bytes32,indexed address,address,uint64,uint256,address,bool)
+          handler: handleListingCreated
+        - event: ListingDeleted(indexed bytes32)
+          handler: handleListingDeleted
+        - event: ListingUpdated(indexed bytes32,uint256)
+          handler: handleListingUpdated
+        - event: Purchased(indexed bytes32,indexed address,address,uint64,address,uint256)
+          handler: handlePurchased
+      file: ./src/nivika-marketplace.ts

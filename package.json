@@ -13,7 +13,7 @@
     "test": "graph test",
     "graph-node": "docker compose --file ./nivikaSubgraph/docker-compose.yaml up -d",
     "graph-local-clean": "docker compose down -v && docker-compose rm -v && rm -rf data/ipfs data/postgres",
-    "initDeployContract": "graph init deployContract --ipfs=http://localhost:5001/ipfs --abi=./abi.json --from-contract=0x4c04f449db641aafab13f852da908e9d7f12b3b5 --network=testnet --skip-git --contract-name=NivikaMarketplace  --start-block=19667617"
+    "initDeployContract": "graph init deployContract --ipfs=http://localhost:5001/ipfs --abi=./abi.json --from-contract=0xc907642b36a20b05eed5c95fdc7fab059ad1fab2 --network=testnet --skip-git --contract-name=NivikaMarketplace  --start-block=19855301"
   },
   "repository": {
     "type": "git",

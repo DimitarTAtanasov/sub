@@ -1,0 +1,43 @@
+type ListingCreated @entity(immutable: true) {
+  id: Bytes!
+  listingId: Bytes! # bytes32
+  seller: Bytes! # address
+  tokenAddress: Bytes! # address
+  serialNumber: BigInt! # uint64
+  price: BigInt! # uint256
+  paymentToken: Bytes! # address
+  active: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ListingDeleted @entity(immutable: true) {
+  id: Bytes!
+  listingId: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ListingUpdated @entity(immutable: true) {
+  id: Bytes!
+  listingId: Bytes! # bytes32
+  newPrice: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Purchased @entity(immutable: true) {
+  id: Bytes!
+  listingId: Bytes! # bytes32
+  buyer: Bytes! # address
+  tokenAddress: Bytes! # address
+  serialNumber: BigInt! # uint64
+  paymentToken: Bytes! # address
+  price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
